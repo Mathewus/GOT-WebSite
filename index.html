@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Of Thrones</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    <link rel="stylesheet" href="./src/css/fontawesome/css/all.min.css">
+    <link rel="icon" href="./src/imagens/logo.png" type="image/x-png">
+</head>
+
+<body>
+
+    <main id="principal">
+
+        <div class="carrossel-banner">
+            <div class="slides" id="slide1">
+                <img class="slide-img" src="./src/imagens/banner_image1.png" alt="">
+                <p class="slide-text">For seven seasons you've watched characters lie, bleed, and sacrifice for the Iron Throne. As the final season approaches, only one question remains: How far will you go?</p>
+            </div>
+        </div>
+
+        <div class="section" id="section1">
+
+            <div id="sections-info">
+
+                <div id="section1-info">
+
+                    <h2 id="section1-title" class="section-title">CAST AND CREW</h2>
+
+                    <div id="selecao-personagem">
+
+                        <div id="container-personagens">
+
+                            <div id="lista-personagens">
+
+                                <div id="carrossel-personagens">
+
+                                    <div id="jaime_lannister" class="personagens" data-name="jaime lannister" data-description="Ser Jaime Lannister, also known as the Kingslayer, is a knight from House Lannister. He is the second child and first-born son of Lord Tywin Lannister of Casterly Rock and his wife, Lady Joanna, also of House Lannister.">
+                                        <div class="mask-image">
+                                            <div class="gradient-cast"></div>
+                                            <img src="./src/imagens/jaime.PNG" alt="">
+                                        </div>
+                                    </div>
+                                    <div id="tyrion_lannister" class="personagens selecionado" data-name="tyrion lannister" data-description="Lord Tyrion Lannister is the youngest child of Lord Tywin Lannister and younger brother of Cersei and Jaime Lannister. A dwarf, he uses his wit and intellect to overcome the prejudice he faces.">
+                                        <div class="mask-image">
+                                            <div class="gradient-cast"></div>
+                                            <img src="./src/imagens/tyrion.PNG" alt="">
+                                        </div>
+                                    </div>
+                                    <div id="cersei_lannister" class="personagens" data-name="cersei lannister" data-description="Lady Cersei Lannister is the middle daughter of Lord Tywin Lannister and twin brother of the knight Jaime Lannister. She is known for her cunning and intelligence, and goes to great lengths to get everything she wants.">
+                                        <div class="mask-image">
+                                            <div class="gradient-cast"></div>
+                                            <img src="./src/imagens/cersei.PNG" alt="">
+                                        </div>
+                                    </div>
+                                    <div id="daenarys_targaryen" class="personagens" data-name="daenarys targaryen" data-description="Queen Daenerys Targaryen is the younger sister of Rhaegar Targaryen and Viserys Targaryen, the paternal aunt of Jon Snow, and the youngest child of King Aerys Targaryen and Queen Rhaella Targaryen.">
+                                        <div class="mask-image">
+                                            <div class="gradient-cast"></div>
+                                            <img src="./src/imagens/daenarys.PNG" alt="">
+                                        </div>
+                                    </div>
+                                    <div id="jon_snow" class="personagens" data-name="jon snow" data-description="Jon Snow, born Aegon Targaryen, is the son of Rhaegar Targaryen and Lyanna Stark, the late Prince of Dragonstone. He was raised by Lord Eddard Stark, his mother's brother, who welcomed him as a son.">
+                                        <div class="mask-image">
+                                            <div class="gradient-cast"></div>
+                                            <img src="./src/imagens/jon.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <i id="arrow-prev1" class="fa-solid fa-angle-up arrows" onclick="passCharacter(-1)"></i>
+                            <i id="arrow-next1" class="fa-solid fa-angle-down arrows" onclick="passCharacter(1)"></i>
+                        </div>
+
+                        <div id="personagem">
+
+                            <div class="img-info">
+                                <img class="imagem-personagem" src="./src/imagens/tyrion_lannister.png" alt="">
+                            </div>
+
+                            <div id="info-personagem">
+
+                                <div id="detalhes-personagem">
+                                    <hr class="select" id="select-section1">
+                                    <h4 class="titulo-personagem">Tyrion Lannister</h4>
+                                </div>
+
+                                <p class="descricao-personagem">Lord Tyrion Lannister is the youngest child of Lord Tywin Lannister and younger brother of Cersei and Jaime Lannister. A dwarf, he uses his wit and intellect to overcome the prejudice he faces.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="section2-cabecalho">
+
+                    <h2 id="section2-title" class="section-title">EPISODE GUIDE</h2>
+
+                    <div id="menu-opcoes">
+
+                        <div id="button-menu">
+                            <span class="seasons">Season 7</span>
+                            <i class="fa-solid fa-angle-down menu-icon"></i>
+                        </div>
+
+                        <ul id="sub-menu">
+                            <li class="items selecionado" id="7">Season 7</li>
+                            <li class="items" id="6">Season 6</li>
+                            <li class="items" id="5">Season 5</li>
+                            <li class="items" id="4">Season 4</li>
+                            <li class="items" id="3">Season 3</li>
+                            <li class="items" id="2">Season 2</li>
+                            <li class="items" id="1">Season 1</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div id="section2-info">
+
+
+                    <div class="guide-episodes" id="season1" data-name="" data-description="">
+
+                        <div class="episodes">
+
+                            <div class="episode ativado">
+                                <img class="img-episode" src="./src/imagens/s1episode7.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s1episode6.jpeg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s1episode5.jpeg" alt="">
+                            </div>
+
+
+                        </div>
+
+                        <div class="info-episode">
+
+                            <div class="cabecalho-episode">
+                                <hr class="select" id="select-section2">
+                                <h4 class="titulo-episode">You Win of You Die</h4>
+                            </div>
+
+                            <p class="descricao-episode">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo a qui unde illum modi odio neque adipisci quae? Quaerat cupiditate itaque quo nemo blanditiis saepe enim est quia voluptates deleniti..</p>
+
+                            <span class="more-info">more</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="guide-episodes" id="season2" data-name="" data-description="">
+
+                        <div class="episodes">
+
+                            <div class="episode ativado">
+                                <img class="img-episode" src="./src/imagens/s2episode7.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s2episode6.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s2episode5.jpg" alt="">
+                            </div>
+
+
+                        </div>
+
+                        <div class="info-episode">
+
+                            <div class="cabecalho-episode">
+                                <hr class="select" id="select-section2">
+                                <h4 class="titulo-episode">A Man Without Honor</h4>
+                            </div>
+
+                            <p class="descricao-episode">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum non porro quasi qui ad tempore laborum? Corporis eaque iusto ab delectus expedita reiciendis eius dolor! Nemo aut assumenda fugiat explicabo..</p>
+
+                            <span class="more-info">more</span>
+
+                        </div>
+
+                    </div>
+                    <div class="guide-episodes" id="season3" data-name="The Bear and the Maiden Fair" data-description="In the North, Jojen tells Bran they must go beyond the Wall to find the raven, to Osha's horror. Snow and Ygritte's relationship deepens making fellow Wildling Orell angry.">
+
+                        <div class="episodes">
+
+                            <div class="episode ativado">
+                                <img class="img-episode" src="./src/imagens/s3episode7.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s3episode6.png" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s3episode5.jpeg" alt="">
+                            </div>
+
+
+                        </div>
+
+                        <div class="info-episode">
+
+                            <div class="cabecalho-episode">
+                                <hr class="select" id="select-section2">
+                                <h4 class="titulo-episode">The Bear and the Maiden Fair</h4>
+                            </div>
+
+                            <p class="descricao-episode">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum fugiat fuga, eligendi maiores dignissimos magni eaque sed blanditiis doloribus accusamus inventore rem iusto, ex maxime suscipit at totam? Aliquam, tempora!</p>
+
+                            <span class="more-info">more</span>
+
+                        </div>
+
+                    </div>
+                    <div class="guide-episodes" id="season4" data-name="" data-description="">
+
+                        <div class="episodes">
+
+                            <div class="episode ativado">
+                                <img class="img-episode" src="./src/imagens/s4episode7.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s4episode6.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s4episode5.jpg" alt="">
+                            </div>
+
+
+                        </div>
+
+                        <div class="info-episode">
+
+                            <div class="cabecalho-episode">
+                                <hr class="select" id="select-section2">
+                                <h4 class="titulo-episode">Mockingbird</h4>
+                            </div>
+
+                            <p class="descricao-episode">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore explicabo commodi quasi, mollitia repellendus, non quas perspiciatis odio exercitationem nulla ea recusandae ex. Hic, veniam odit? Consectetur assumenda rem temporibus.</p>
+
+                            <span class="more-info">more</span>
+
+                        </div>
+
+                    </div>
+                    <div class="guide-episodes" id="season5" data-name="" data-description="">
+
+                        <div class="episodes">
+
+                            <div class="episode ativado">
+                                <img class="img-episode" src="./src/imagens/s5episode7.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s5episode6.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s5episode5.jpg" alt="">
+                            </div>
+
+
+                        </div>
+
+                        <div class="info-episode">
+
+                            <div class="cabecalho-episode">
+                                <hr class="select" id="select-section2">
+                                <h4 class="titulo-episode">The Gift</h4>
+                            </div>
+
+                            <p class="descricao-episode">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur nostrum, illum labore nisi eum vitae maiores, mollitia fugiat distinctio ex eius magni tempore officia quod nesciunt enim. Aut, necessitatibus nemo!</p>
+
+                            <span class="more-info">more</span>
+
+                        </div>
+
+                    </div>
+                    <div class="guide-episodes" id="season6" data-name="" data-description="">
+
+                        <div class="episodes">
+
+                            <div class="episode ativado">
+                                <img class="img-episode" src="./src/imagens/s6episode7.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s6episode6.jpg" alt="">
+                            </div>
+                            <div class="episode">
+                                <img class="img-episode" src="./src/imagens/s6episode5.jpg" alt="">
+                            </div>
+
+
+                        </div>
+
+                        <div class="info-episode">
+
+                            <div class="cabecalho-episode">
+                                <hr class="select" id="select-section2">
+                                <h4 class="titulo-episode">The Broken Man</h4>
+                            </div>
+
+                            <p class="descricao-episode">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, voluptates? Excepturi, deleniti adipisci suscipit ullam maxime laborum ipsum itaque natus hic, nisi rem deserunt veritatis! Eos accusamus deserunt enim repellendus!</p>
+
+                            <span class="more-info">more</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="guide-episodes clicado" id="season7" data-name="The Rains of Castamere" data-description="Tarly, Gilly and her son arrive at the Wall. During a thunderstorm, Bran enters Hodor's mind to calm him down, an ability not possessed by any Wildling. Nearby, Snow refuses to kill a">
+
+                        <div class="episodes">
+
+                            <div class="detalhes-episode">
+                                <span>07</span>
+                                <div class="episode ativado">
+                                    <img class="img-episode" src="./src/imagens/s7episode7.png" alt="">
+                                </div>
+                            </div>
+                            <div class="detalhes-episode">
+                                <span>08</span>
+                                <div class="episode">
+                                    <img class="img-episode" src="./src/imagens/s7episode8.png" alt="">
+                                </div>
+                            </div>
+                            <div class="detalhes-episode">
+                                <span>09</span>
+                                <div class="episode">
+                                    <img class="img-episode" src="./src/imagens/s7episode9.png" alt="">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="info-episode">
+
+                            <div class="cabecalho-episode">
+                                <hr class="select" id="select-section2">
+                                <h4 class="titulo-episode">The Dragon and the Wolf</h4>
+                            </div>
+
+                            <p class="descricao-episode">Nine noble families wage war against each other in order to gain control over the mythical land of Westeros. Meanwhile, a force is rising after millenniums and threatens the existenceof living men.</p>
+
+                            <span class="more-info">more</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-season">
+
+                        <div class="detalhes-season">
+                            <h4 class="titulo-season">The Rains of Castamere</h4>
+                        </div>
+
+                        <p class="descricao-season">Tarly, Gilly and her son arrive at the Wall. During a thunderstorm, Bran enters Hodor's mind to calm him down, an ability not possessed by any Wildling. Nearby, Snow refuses to kill a</p>
+
+                    </div>
+
+                </div>
+
+                <div id="section3-info">
+
+                    <h2 id="section3-title" class="section-title">GALLERY</h2>
+
+                    <div id="gallery">
+
+                        <div class="gallery-img">
+
+                            <div class="images">
+                                <div class="gradient-gallery"></div>
+                                <img src="./src/imagens/gallery_img1.png" alt="">
+                            </div>
+                            <div class="images selecionado">
+                                <div class="gradient-gallery"></div>
+                                <img src="./src/imagens/gallery_img2.png" alt="">
+                            </div>
+                            <div class="images">
+                                <div class="gradient-gallery"></div>
+                                <img src="./src/imagens/gallery_img3.png" alt="">
+                            </div>
+                            <div class="images">
+                                <div class="gradient-gallery"></div>
+                                <img src="./src/imagens/gallery_img4.png" alt="">
+                            </div>
+
+                            <i id="arrow-prev2" class="fa-solid fa-angle-up arrows" onclick="passGallery(-1)"></i>
+                            <i id="arrow-next2" class="fa-solid fa-angle-down arrows" onclick="passGallery(1)"></i>
+                        </div>
+
+                        <div class="info-gallery">
+                            <img src="./src/imagens/gallery_img5.png" alt="">
+                            <p id="description-gallery">Co-creators David Benioff and DB.Weiss have said thatthe seventh and eighth seasons word likely consist offewer episodes, stating that after</p>
+                        </div>
+                    </div>
+
+                    <div id="gallery-mobile">
+
+                        <div class="images-mobile">
+                            <div class="gradient-gallery-mobile"></div>
+                            <img src="./src/imagens/gallery-mobile1.jpg" alt="">
+                        </div>
+                        <div class="images-mobile">
+                            <div class="gradient-gallery-mobile"></div>
+                            <img src="./src/imagens/gallery-mobile2.jpg" alt="">
+                        </div>
+                        <div class="images-mobile">
+                            <div class="gradient-gallery-mobile"></div>
+                            <img src="./src/imagens/gallery-mobile3.jpg" alt="">
+                        </div>
+                        <div class="images-mobile selecionado">
+                            <div class="gradient-gallery-mobile"></div>
+                            <img src="./src/imagens/gallery-mobile4.jpg" alt="">
+                        </div>
+                        <div class="images-mobile">
+                            <div class="gradient-gallery-mobile"></div>
+                            <img src="./src/imagens/gallery-mobile5.jpg" alt="">
+                        </div>
+                        <div class="images-mobile">
+                            <div class="gradient-gallery-mobile"></div>
+                            <img src="./src/imagens/gallery-mobile6.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <footer id="rodape">
+
+                    <img src="./src/imagens/logo_hbo.png" alt="">
+
+                    <div id="description-rodape">
+                        <p>2019 Home Box Office, Inc. All Rights Reserved. </p>
+                        <p>Privacy Policy. </p>
+                        <p>Terms. </p>
+                        <p>Ad Choices. </p>
+                    </div>
+
+                </footer>
+
+            </div>
+
+            <img id="section1-fundo-desktop" class="section-img-fundo" src="./src/imagens/fundo_section1.png" alt="">
+
+            <img id="section1-fundo-mobile" class="section-img-fundo" src="./src/imagens/tyrion_lannister_fundo.jpg" alt="">
+
+            <div class="section" id="section2">
+
+                <img id="section2-fundo-desktop" class="section-img-fundo" src="./src/imagens/fundo_section2.png" alt="">
+
+                <img id="section2-fundo-mobile" class="section-img-fundo" src="./src/imagens/season7_fundo.jpg" alt="">
+
+                <div class="section" id="section3">
+
+                    <img id="section3-fundo-desktop" class="section-img-fundo" src="./src/imagens/fundo_section3.png" alt="">
+
+                    <img id="section3-fundo-mobile" class="section-img-fundo" src="./src/imagens/fundo_gallery_mobile.jpg" alt="">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="./src/css/fontawesome/js/all.min.js"></script>
+    <script src="./src/js/index.js"></script>
+
+</body>
+
+</html>
