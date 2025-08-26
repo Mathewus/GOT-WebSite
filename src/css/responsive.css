@@ -1180,6 +1180,17 @@
     }
 }
 
+@media (max-width: 465px) {
+
+    #section3-info {
+
+        margin-top: 455px;
+        /* padding: 0 5%; */
+
+    }
+
+}
+
 @media (max-width: 380px) {
 
 
