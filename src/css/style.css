@@ -25,17 +25,18 @@ body {
 }
 
 
-#banner {
+.carrossel-banner {
 
+    display: flex;
     max-width: 1350px;
-    max-height: 670px;
-    position: absolute;
-
+    height: 700px;
+    overflow: hidden;
 }
 
 .slides {
 
-    width: 100%;
+    position: relative;
+    width: 1350px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -43,15 +44,16 @@ body {
 
 }
 
-#slide1 {
+/* #slide1 {
+
 
     position: relative;
 
-}
+} */
 
 .slide-img {
 
-    width: 100%;
+    width: 100vw;
     height: 100%;
 }
 
