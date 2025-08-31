@@ -7,6 +7,32 @@
 
 let counter = 0;
 let counter2 = 1;
+const imagens = document.getElementsByClassName("slide-img");
+const botoesCarrosel = document.querySelectorAll(".botao");
+
+botoesCarrosel.forEach((botao, indice) => {
+
+    botao.addEventListener("click", () => {
+
+        for(let i = 0; i < botoesCarrosel.length; i++) {
+
+            botoesCarrosel[i].classList.remove("selecionado");
+            botoesCarrosel[indice].classList.add("selecionado");
+
+            let slideWidth = 100;
+            let moviment = -indice * slideWidth;
+
+            imagens[i].style.transform = `translateX(${moviment}%)`;
+
+            console.clear()
+            console.log(moviment);
+
+        }  
+    
+    })
+
+})
+
 
 showCharacter(counter)
 showSeason()
