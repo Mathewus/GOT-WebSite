@@ -7,7 +7,7 @@
 
 let counter = 0;
 let counter2 = 1;
-const imagens = document.getElementsByClassName("slide-img");
+const slidesBanner = document.getElementsByClassName("slides");
 const botoesCarrosel = document.querySelectorAll(".botao");
 
 botoesCarrosel.forEach((botao, indice) => {
@@ -22,7 +22,7 @@ botoesCarrosel.forEach((botao, indice) => {
             let slideWidth = 100;
             let moviment = -indice * slideWidth;
 
-            imagens[i].style.transform = `translateX(${moviment}%)`;
+            slidesBanner[i].style.transform = `translateX(${moviment}%)`;
 
             console.clear()
             console.log(moviment);
