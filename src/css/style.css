@@ -54,6 +54,7 @@ body {
     border: none;
     cursor: pointer;
     box-shadow: none;
+    transition: all ease-in-out .2s;
 }
 
 #botoes-carrossel .botao.selecionado {
