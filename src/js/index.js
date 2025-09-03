@@ -14,7 +14,7 @@ botoesCarrosel.forEach((botao, indice) => {
 
     botao.addEventListener("click", () => {
 
-        for(let i = 0; i < botoesCarrosel.length; i++) {
+        for (let i = 0; i < botoesCarrosel.length; i++) {
 
             botoesCarrosel[i].classList.remove("selecionado");
             botoesCarrosel[indice].classList.add("selecionado");
@@ -27,8 +27,8 @@ botoesCarrosel.forEach((botao, indice) => {
             console.clear()
             console.log(moviment);
 
-        }  
-    
+        }
+
     })
 
 })
@@ -244,14 +244,9 @@ function showSeason() {
             item.classList.add("selecionado");
             submenu.classList.toggle("ativado");
 
-
-            if (innerWidth < 490) {
-
-                section2Fundo.src = `./src/imagens/${idSeason}_fundo.jpg`;
-                seasonTitle.textContent = season.getAttribute("data-name")
-                seasonDescription.textContent = season.getAttribute("data-description")
-
-            }
+            section2Fundo.src = `./src/imagens/${idSeason}_fundo.jpg`;
+            seasonTitle.textContent = season.getAttribute("data-name")
+            seasonDescription.textContent = season.getAttribute("data-description")
 
 
         })
