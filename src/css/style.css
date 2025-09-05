@@ -30,7 +30,7 @@ body {
     position: relative;
     display: flex;
     max-width: 1440px;
-    height: 750px;
+    height: 770px;
     overflow: hidden;
 }
 
@@ -79,6 +79,7 @@ body {
 
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .slide-text {
@@ -395,6 +396,7 @@ body {
 
 #section3-info {
 
+    position: relative;
     margin-top: 90px;
     padding-left: 20%;
     font-family: Montserrat, sans-serif;
@@ -408,6 +410,58 @@ body {
     margin-top: 117px;
 }
 
+
+.wallpaper {
+
+    position: absolute;
+    top: -15%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    min-height: 115vh;
+}
+
+.wallpaper .wallpaper-title {
+
+    margin-top: 110px;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: "Felix Titling";
+    font-weight: normal;
+    letter-spacing: 6px;
+
+}
+
+.wallpaper-info {
+
+    margin-top: 100%;
+    background-color: #000000ad;
+    padding: 2rem 2rem 10rem 2rem;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.wallpaper-info .wallpaper-info-description{
+
+    line-height: 2rem;
+
+}
+
+.wallpaper img {
+
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
 
 .gallery-img {
 
@@ -527,6 +581,7 @@ body {
     width: 100%;
     height: 100%;
     filter: saturate(0%);
+    object-fit: cover;
     transition: all ease-in-out .2s;
 }
 
