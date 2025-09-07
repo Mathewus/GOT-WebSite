@@ -413,17 +413,24 @@ body {
 
 .wallpaper {
 
+    transform: scale(0);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
     height: 100vh;
+    transition: all ease-in-out .3s;
+}
+
+.wallpaper.ativado {
+
+    transform: scale(1);
 }
 
 .wallpaper .wallpaper-title {
 
-    margin-top: 110px;
+    margin-top: 80px;
     color: #FFF;
     text-align: center;
     font-size: 1.3rem;
@@ -436,33 +443,51 @@ body {
 .wallpaper .wallpaper-options {
 
     position: absolute;
+    z-index: 2;
+    top: 300px;
+    right: 60px;
+    
+}
+
+.wallpaper .wallpaper-options ul {
+
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    z-index: 2;
+    gap: 1rem;
 
+}
+
+.wallpaper .wallpaper-item{
+
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.wallpaper .wallpaper-item:hover{
+
+    transform: scale(1.2);
 }
 
 .wallpaper .wallpaper-icon {
 
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     filter: invert(1);
-    /* transition: .3s ease-in-out; */
 
 }
 
 .wallpaper-info {
 
-    margin-top: 80%;
+    margin-top: 60%;
     background-color: #000000ad;
-    padding: 2.5rem 3rem 10rem 3rem;
+    padding: 2.3rem 2.5rem 10rem 2.5rem;
     height: 100vh;
     color: #FFF;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.8rem;
 
 }
 
@@ -482,7 +507,7 @@ body {
 
 }
 
-.wallpaper img {
+.wallpaper .gallery_wallpaper {
 
     position: absolute;
     top: 0;
@@ -490,7 +515,7 @@ body {
     z-index: -1;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 
 }
 
@@ -612,7 +637,6 @@ body {
     width: 100%;
     height: 100%;
     filter: saturate(0%);
-    object-fit: cover;
     transition: all ease-in-out .2s;
 }
 

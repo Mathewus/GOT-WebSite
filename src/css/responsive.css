@@ -879,8 +879,16 @@
     }
 }
 
-@media (max-width: 490px) {
+/* @media (min-width: 490px) {
 
+    .wallpaper.ativado {
+
+        transform: scale(0);
+    }
+
+} */
+
+@media (max-width: 490px) {
 
     .carrossel-banner {
 

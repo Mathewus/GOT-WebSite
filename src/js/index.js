@@ -24,12 +24,55 @@ botoesCarrosel.forEach((botao, indice) => {
 
             slidesBanner[i].style.transform = `translateX(${moviment}%)`;
 
-            console.clear()
-            console.log(moviment);
-
         }
 
     })
+
+})
+
+
+let imagesMobile = document.querySelectorAll(".images-mobile");
+let buttonGrid = document.getElementById("gallery-grid");
+let wallpaper = document.querySelector(".wallpaper");
+let galleryWallpaper = document.querySelector(".gallery_wallpaper");
+let wallpaperTitle = document.querySelector(".wallpaper-info-title")
+let wallpaperdescription = document.querySelector(".wallpaper-info-description")
+const wallpaperAtivado = document.querySelector(".ativado")
+
+imagesMobile.forEach((imagemobile) => {
+
+    imagemobile.addEventListener("click", () => {
+
+        wallpaper.classList.add("ativado");
+        let idImage = imagemobile.attributes.id.value
+        galleryWallpaper.src = `./src/imagens/wallpaper-${idImage}.png`;
+        wallpaperTitle.textContent = imagemobile.getAttribute("data-name");
+        wallpaperdescription.textContent = imagemobile.getAttribute("data-description");
+    })
+
+
+})
+
+window.onresize = () => {
+    // Verifica se a largura da janela é maior que 490px
+    if (window.innerWidth > 490) {
+        // Remove a classe "ativado"
+        wallpaperAtivado.classList.toggle("ativado");
+        console.log('Classe "ativado" removida.');
+    }
+};
+
+// Executa a verificação uma vez ao carregar a página
+window.onload = () => {
+    if (window.innerWidth > 490) {
+        wallpaperAtivado.classList.toggle("ativado");
+    }
+};
+
+
+buttonGrid.addEventListener("click", () => {
+
+    wallpaper.classList.remove("ativado");
 
 })
 
@@ -295,3 +338,5 @@ function passGallery(n) {
     showGallery(counter2 += n);
 
 }
+
+
