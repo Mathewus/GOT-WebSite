@@ -303,7 +303,8 @@ function passGallery(n) {
 
 function wallpaperGallery() {
 
-    let imagesMobile = document.querySelectorAll(".images-mobile");
+let body = document.getElementById("corpo");
+let imagesMobile = document.querySelectorAll(".images-mobile");
 const buttonShare = document.getElementById("gallery-share");
 let buttonGrid = document.getElementById("gallery-grid");
 let wallpaper = document.querySelector(".wallpaper");
@@ -320,6 +321,7 @@ imagesMobile.forEach((imagemobile) => {
         wallpaperTitle.textContent = imagemobile.getAttribute("data-name");
         wallpaperdescription.textContent = imagemobile.getAttribute("data-description");
         wallpaper.classList.add("ativado");
+        body.classList.add("overflow");
 
         buttonShare.addEventListener('click', async () => {
             // Verifica se a API de compartilhamento está disponível no navegador
@@ -359,6 +361,7 @@ window.addEventListener("resize", () => {
     if (window.innerWidth > 490) {
 
         wallpaper.classList.remove("ativado");
+        body.classList.remove("overflow");
     }
 
 })
@@ -367,6 +370,7 @@ window.addEventListener("resize", () => {
 buttonGrid.addEventListener("click", () => {
 
     wallpaper.classList.remove("ativado");
+    body.classList.remove("overflow");
 
 })
 

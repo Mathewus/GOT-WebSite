@@ -12,9 +12,14 @@
     padding: 0;
 }
 
-body {
+#corpo {
     background-color: rgb(5, 5, 5);
     overflow-x: hidden;
+}
+
+#corpo.overflow {
+
+    overflow: hidden;
 }
 
 #principal {
