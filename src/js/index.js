@@ -247,11 +247,11 @@ function showSeason() {
             season.classList.add("clicado");
             seasons.textContent = itemContent;
             item.classList.add("selecionado");
-            submenu.classList.toggle("ativado");
-
             section2Fundo.src = `./src/imagens/${idSeason}_fundo.jpg`;
             seasonTitle.textContent = season.getAttribute("data-name")
             seasonDescription.textContent = season.getAttribute("data-description")
+            submenu.classList.toggle("ativado");
+
 
 
         })
