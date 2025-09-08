@@ -5,6 +5,7 @@
 
         min-width: 100%;
         min-height: 650px;
+        object-fit: cover;
     }
 
     #container-personagens {
@@ -857,10 +858,6 @@
         left: 35px;
     }
 
-    #personagem {
-
-        right: 0px;
-    }
 
     #select-section1 {
 
@@ -879,14 +876,6 @@
     }
 }
 
-/* @media (min-width: 490px) {
-
-    .wallpaper.ativado {
-
-        transform: scale(0);
-    }
-
-} */
 
 @media (max-width: 490px) {
 
@@ -908,15 +897,16 @@
         top: auto;
     }
 
+    #personagem {
+
+        right: 0px;
+    }
+
     #section3 {
 
         top: auto;
     }
 
-    /* #section1-info { 
-
-        height: 1050px;
-    } */
 
     #section2-cabecalho {
 
@@ -984,7 +974,6 @@
     #section1-fundo-mobile {
 
         display: block;
-        /* height: 900px; */
 
     }
 
@@ -998,8 +987,6 @@
     #section2-fundo-mobile {
 
         display: block;
-        /* margin-top: 235px; */
-        /* height: 1002px; */
 
     }
 
@@ -1247,6 +1234,16 @@
         margin-top: 235px;
 
     }
+}
+
+@media (max-width: 360px) { 
+
+.wallpaper .gallery_wallpaper {
+
+    object-fit: cover;
+
+}
+
 }
 
 @media (max-width: 388px) {

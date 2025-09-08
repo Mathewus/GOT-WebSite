@@ -7,78 +7,40 @@
 
 let counter = 0;
 let counter2 = 1;
-const slidesBanner = document.getElementsByClassName("slides");
-const botoesCarrosel = document.querySelectorAll(".botao");
-
-botoesCarrosel.forEach((botao, indice) => {
-
-    botao.addEventListener("click", () => {
-
-        for (let i = 0; i < botoesCarrosel.length; i++) {
-
-            botoesCarrosel[i].classList.remove("selecionado");
-            botoesCarrosel[indice].classList.add("selecionado");
-
-            let slideWidth = 100;
-            let moviment = -indice * slideWidth;
-
-            slidesBanner[i].style.transform = `translateX(${moviment}%)`;
-
-        }
-
-    })
-
-})
 
 
-let imagesMobile = document.querySelectorAll(".images-mobile");
-let buttonGrid = document.getElementById("gallery-grid");
-let wallpaper = document.querySelector(".wallpaper");
-let galleryWallpaper = document.querySelector(".gallery_wallpaper");
-let wallpaperTitle = document.querySelector(".wallpaper-info-title")
-let wallpaperdescription = document.querySelector(".wallpaper-info-description")
-const wallpaperAtivado = document.querySelector(".ativado")
-
-imagesMobile.forEach((imagemobile) => {
-
-    imagemobile.addEventListener("click", () => {
-
-        wallpaper.classList.add("ativado");
-        let idImage = imagemobile.attributes.id.value
-        galleryWallpaper.src = `./src/imagens/wallpaper-${idImage}.png`;
-        wallpaperTitle.textContent = imagemobile.getAttribute("data-name");
-        wallpaperdescription.textContent = imagemobile.getAttribute("data-description");
-    })
-
-
-})
-
-window.onresize = () => {
-    // Verifica se a largura da janela é maior que 490px
-    if (window.innerWidth > 490) {
-        // Remove a classe "ativado"
-        wallpaperAtivado.classList.toggle("ativado");
-        console.log('Classe "ativado" removida.');
-    }
-};
-
-// Executa a verificação uma vez ao carregar a página
-window.onload = () => {
-    if (window.innerWidth > 490) {
-        wallpaperAtivado.classList.toggle("ativado");
-    }
-};
-
-
-buttonGrid.addEventListener("click", () => {
-
-    wallpaper.classList.remove("ativado");
-
-})
-
-
+carroselSlides()
+wallpaperGallery()
 showCharacter(counter)
 showSeason()
+
+
+function carroselSlides() {
+
+    const slidesBanner = document.getElementsByClassName("slides");
+    const botoesCarrosel = document.querySelectorAll(".botao");
+
+    botoesCarrosel.forEach((botao, indice) => {
+
+        botao.addEventListener("click", () => {
+
+            for (let i = 0; i < botoesCarrosel.length; i++) {
+
+                botoesCarrosel[i].classList.remove("selecionado");
+                botoesCarrosel[indice].classList.add("selecionado");
+
+                let slideWidth = 100;
+                let moviment = -indice * slideWidth;
+
+                slidesBanner[i].style.transform = `translateX(${moviment}%)`;
+
+            }
+
+        })
+
+    })
+
+}
 
 function showCharacter(n) {
 
@@ -339,4 +301,74 @@ function passGallery(n) {
 
 }
 
+function wallpaperGallery() {
+
+    let imagesMobile = document.querySelectorAll(".images-mobile");
+const buttonShare = document.getElementById("gallery-share");
+let buttonGrid = document.getElementById("gallery-grid");
+let wallpaper = document.querySelector(".wallpaper");
+let galleryWallpaper = document.querySelector(".gallery_wallpaper");
+let wallpaperTitle = document.querySelector(".wallpaper-info-title")
+let wallpaperdescription = document.querySelector(".wallpaper-info-description")
+
+imagesMobile.forEach((imagemobile) => {
+
+    imagemobile.addEventListener("click", () => {
+
+        let idImage = imagemobile.attributes.id.value
+        galleryWallpaper.src = `./src/imagens/wallpaper-${idImage}.png`;
+        wallpaperTitle.textContent = imagemobile.getAttribute("data-name");
+        wallpaperdescription.textContent = imagemobile.getAttribute("data-description");
+        wallpaper.classList.add("ativado");
+
+        buttonShare.addEventListener('click', async () => {
+            // Verifica se a API de compartilhamento está disponível no navegador
+            if (navigator.share) {
+                try {
+                    // Objeto com as informações que você quer compartilhar
+
+                    // 1. DESABILITA o botão para evitar cliques múltiplos
+                    buttonShare.disabled = true;
+
+                    await navigator.share({
+                        title: 'Game of Thrones',
+                        text: 'Confira esta imagem incrível de Game of Thrones!',
+                        url: `./src/imagens/wallpaper-${idImage}.png`,
+                    });
+                    console.log('Conteúdo compartilhado com sucesso!');
+                } catch (error) {
+                    console.error('Erro ao compartilhar:', error);
+                } finally {
+                    // 2. HABILITA o botão novamente, independente do resultado (sucesso ou erro)
+                    buttonShare.disabled = false;
+                }
+            } else {
+                // Caso a API não esteja disponível, você pode oferecer uma alternativa
+                // Por exemplo, copiar a URL para a área de transferência
+                alert('A API de compartilhamento não está disponível neste navegador.');
+                // Você pode adicionar um código para copiar a URL aqui
+            }
+        });
+    })
+
+
+})
+
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 490) {
+
+        wallpaper.classList.remove("ativado");
+    }
+
+})
+
+
+buttonGrid.addEventListener("click", () => {
+
+    wallpaper.classList.remove("ativado");
+
+})
+
+}
 
