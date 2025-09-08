@@ -1236,13 +1236,13 @@
     }
 }
 
-@media (max-width: 360px) { 
+@media (max-width: 360px) {
 
-.wallpaper .gallery_wallpaper {
+    .wallpaper .gallery_wallpaper {
 
-    object-fit: cover;
+        object-fit: cover;
 
-}
+    }
 
 }
 
@@ -1504,6 +1504,23 @@
 
     }
 
+    .info-season {
+
+        margin-top: 200px;
+    }
+
+
+}
+
+
+
+@media (max-width: 238px) {
+
+    #info-personagem {
+
+        margin-top: -25px;
+        gap: 2rem;
+    }
 
 }
 
