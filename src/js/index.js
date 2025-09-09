@@ -1,45 +1,50 @@
-// 1º Passo: Criar um contador para toda vez que o botão for clicado ele incrementar 1 ou subtrair 1
+// 1º Passo: Criar contadores para toda vez que o botão for clicado ele incrementar 1 ou subtrair 1
 
-// 2º Passo: Criar uma função para mudar de personagem assim que clicar nos botões de avançar ou retroceder
+// 2° Passo: Criar função para alternar entre os slides do carrossel
 
-// 3º Passo: Quando clicar nos botões além de mudar de personagens, mudar suas descrições
+// 3º Passo: Criar função para mudar de personagem assim que clicar nos botões de avançar ou retroceder
+
+// 4º Passo: Quando clicar nos botões além de mudar de personagens, mudar suas descrições
+
+// 5º Passo: Criar função para mudar a exibição das temporadas
+
+// 6º Passo: Criar função para alternar entre as imagens da galeria (mobile e desktop)
 
 
-let counter = 0;
-let counter2 = 1;
+let counter = 0; // Contador 1
+let counter2 = 1; // Contador 2
 
+// Chamando funções
 
-carroselSlides()
+carrosselSlides()
 wallpaperGallery()
 showCharacter(counter)
 showSeason()
 
 
-function carroselSlides() {
+function carrosselSlides() {
 
-    const slidesBanner = document.getElementsByClassName("slides");
-    const botoesCarrosel = document.querySelectorAll(".botao");
+    const slidesBanner = document.getElementsByClassName("slides"); // variável que recebe uma coleção (dinâmica) de slides do carrossel
+    const botoesCarrossel = document.querySelectorAll(".botao"); // variável que recebe um coleção (estática) dos botões do carrossel
 
-    botoesCarrosel.forEach((botao, indice) => {
+
+    botoesCarrossel.forEach((botao, indice) => { //Para cada botão do carrossel será adicionado um evento de "click" selecionando o botão e seu "indice"
 
         botao.addEventListener("click", () => {
 
-            for (let i = 0; i < botoesCarrosel.length; i++) {
+            for (let i = 0; i < botoesCarrossel.length; i++) { // enquando i for menor que a quantidade de botões, some i + 1
 
-                botoesCarrosel[i].classList.remove("selecionado");
-                botoesCarrosel[indice].classList.add("selecionado");
+                botoesCarrossel[i].classList.remove("selecionado"); // removendo a classe "selecionado" de cada botão 
+                botoesCarrossel[indice].classList.add("selecionado"); // adicionando a classe "selecionado" no botão correspondente ao indice q foi selecionado
 
-                let slideWidth = 100;
-                let moviment = -indice * slideWidth;
+                let slideWidth = 100; // variável que recebe o valor da largura do slide
+                let moviment = -indice * slideWidth; // variável que recebe o valor da multiplicação da largura do slide pelo indice do botão que foi selecionado
 
-                slidesBanner[i].style.transform = `translateX(${moviment}%)`;
+                slidesBanner[i].style.transform = `translateX(${moviment}%)`; // utilizando a propriedade "transform" e o valor "translateX() para modificar a posição dos slides ". ao clicar nos botões do carrossel o indice do botão selecionado é multiplicado pela largura dos slides e esse resultado é aplicado na função "translateX" movendo assim todos os slides para mesma direção ao mesmo tempo dando o efeito de transição, logo quanto maior o indice maior será a deslocação dos slides.
 
             }
-
         })
-
     })
-
 }
 
 function showCharacter(n) {
@@ -49,7 +54,6 @@ function showCharacter(n) {
     const section1Fundo = document.getElementById("section1-fundo-mobile");
     const primeiroSlide = slides[0];
     const ultimoSlide = slides[4];
-
 
     if (n < 0) {
 
@@ -76,24 +80,19 @@ function showCharacter(n) {
         carrossel.classList.add("movein1");
     }
 
-
     let moviment = 97 * counter;
-
 
     if (innerWidth < 1200) {
 
         moviment = 86 * counter;
-
     }
 
     if (innerWidth < 970) {
 
         moviment = 65 * counter;
-
     }
 
     carrossel.style.transform = `translateY(${-moviment}px)`;
-
 
     let tituloPersonagem = document.querySelector(".titulo-personagem")
     let descricaoPersonagem = document.querySelector(".descricao-personagem");
@@ -123,7 +122,6 @@ function showCharacter(n) {
         imagemPersonagem.classList.remove("animation");
         imagemPersonagem.offsetWidth;
         imagemPersonagem.classList.add("animation");
-
         section1Fundo.src = `./src/imagens/${idSelecionado}_fundo.jpg`
 
     }
@@ -156,7 +154,6 @@ function showCharacter(n) {
 
         slide.addEventListener("click", () => {
 
-
             if (innerWidth < 490) {
 
                 for (let i = 0; i < slidesMobile.length; i++) {
@@ -178,7 +175,6 @@ function showCharacter(n) {
                 section1Fundo.src = `./src/imagens/${idSelecionado}_fundo.jpg`
 
             }
-
         })
     })
 
@@ -205,8 +201,6 @@ function showCharacter(n) {
             isScrolling = false;
         });
     }
-
-
 }
 
 
@@ -252,39 +246,32 @@ function showSeason() {
             seasonDescription.textContent = season.getAttribute("data-description")
             submenu.classList.toggle("ativado");
 
-
-
         })
-
     })
-
 }
 
 
 
 function showGallery(n) {
 
-    let slidesGallery = document.querySelectorAll(".images");
+    let imagesGallery = document.querySelectorAll(".images"); // variável para armazenar as imagens da galeria
 
     if (n > 3) {
 
         counter2 = 0;
-
     }
 
     if (n < 0) {
 
-        counter2 = 3;
-
+        counter2 = 3; // se n receber 
     }
 
-    for (let i = 0; i < slidesGallery.length; i++) {
+    for (let i = 0; i < imagesGallery.length; i++) {
 
-        slidesGallery[i].classList.remove("selecionado");
+        imagesGallery[i].classList.remove("selecionado"); // removendo a classe "selecionado" de todas as imagens da galeria
     }
 
-    slidesGallery[counter2].classList.add("selecionado");
-
+    imagesGallery[counter2].classList.add("selecionado"); // adicionando a classe "selecionado" na imagem que está sendo selecionada através do seu indice (posição), que nesse caso é o valor que a variável "counter2"(argumento) estará armazenando a medida que o valor do parâmetro n é atualizado quando a função "showGallery" é chamada.
 
 }
 
@@ -292,13 +279,11 @@ function showGallery(n) {
 function passCharacter(n) {
 
     showCharacter(counter += n);
-
 }
 
 function passGallery(n) {
 
     showGallery(counter2 += n);
-
 }
 
 function wallpaperGallery() {
@@ -352,8 +337,6 @@ imagesMobile.forEach((imagemobile) => {
             }
         });
     })
-
-
 })
 
 window.addEventListener("resize", () => {
@@ -373,6 +356,5 @@ buttonGrid.addEventListener("click", () => {
     body.classList.remove("overflow");
 
 })
-
 }
 
