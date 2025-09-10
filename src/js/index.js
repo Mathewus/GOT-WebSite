@@ -49,22 +49,22 @@ function carrosselSlides() {
 
 function showCharacter(n) {
 
-    const carrossel = document.getElementById("carrossel-personagens");
-    let slides = document.getElementsByClassName("personagens");
-    const section1Fundo = document.getElementById("section1-fundo-mobile");
-    const primeiroSlide = slides[0];
-    const ultimoSlide = slides[4];
+    const carrossel = document.getElementById("carrossel-personagens"); // variável que recebe elemento carrossel
+    let slides = document.getElementsByClassName("personagens"); // variável que recebe a coleção de slides dos "personagens"
+    const section1Fundo = document.getElementById("section1-fundo-mobile"); // variável que recebe seção de fundo mobile
+    const primeiroSlide = slides[0]; // variável que recebe o primeiro slide sendo selecionado pela sua posição (índice) na coleção
+    const ultimoSlide = slides[4]; // variável que recebe o ultimo slide sendo selecionado pela sua posição (índice) na coleção
 
     if (n < 0) {
 
         counter = 0;
 
-        carrossel.insertBefore(ultimoSlide, primeiroSlide);
+        carrossel.insertBefore(ultimoSlide, primeiroSlide); // método insertBefore que serve para adicionar o "último slide" antes do primeiro slide na coleção, ou seja como primeiro filho
 
-        carrossel.classList.remove("movein1"); // Removendo a 1º classe de animação do movimento dos slides
-        carrossel.classList.remove("movein2"); // Removendo a 2º classe de animação do movimento dos slides
-        carrossel.offsetWidth;
-        carrossel.classList.add("movein2");
+        carrossel.classList.remove("movein1"); // removendo a 1º classe de animação do movimento dos slides
+        carrossel.classList.remove("movein2"); // removendo a 2º classe de animação do movimento dos slides
+        carrossel.offsetWidth; // a propriedade offsetWidth serve para trazer o valor do tamanho real do elemento carrossel de forma dinâmica a medida que o usuário aciona o evento para passar os slides, ela basicamente reseta esse valor, para que a animação seja realizada de forma flexível
+        carrossel.classList.add("movein2"); // adicionando a 2º classe de animação do movimento dos slides
 
     }
 
@@ -72,12 +72,12 @@ function showCharacter(n) {
 
         counter = 1;
 
-        carrossel.appendChild(primeiroSlide);
+        carrossel.appendChild(primeiroSlide); // método appendChild que serve para adicionar o "primeiro slide" depois do último slide na coleção, ou seja como último filho
 
-        carrossel.classList.remove("movein2"); // Removendo a 1º classe de animação do movimento dos slides
-        carrossel.classList.remove("movein1"); // Removendo a 2º classe de animação do movimento dos slides
+        carrossel.classList.remove("movein2"); // removendo a 1º classe de animação do movimento dos slides
+        carrossel.classList.remove("movein1"); // removendo a 2º classe de animação do movimento dos slides
         carrossel.offsetWidth;
-        carrossel.classList.add("movein1");
+        carrossel.classList.add("movein1"); // adicionando a 1º classe de animação do movimento dos slides
     }
 
     let moviment = 97 * counter;
@@ -216,7 +216,7 @@ function showSeason() {
 
     buttonMenu.addEventListener("click", () => {
 
-        submenu.classList.toggle("ativado");
+        submenu.classList.toggle("ativado"); // Ativando e desativando menu através do evento de click no botão
 
     })
 
@@ -258,12 +258,12 @@ function showGallery(n) {
 
     if (n > 3) {
 
-        counter2 = 0;
+        counter2 = 0; // se n for maior que 3 counter2 irá receber 0
     }
 
     if (n < 0) {
 
-        counter2 = 3; // se n receber 
+        counter2 = 3; // se n for menor que 0 counter2 irá receber 3
     }
 
     for (let i = 0; i < imagesGallery.length; i++) {
