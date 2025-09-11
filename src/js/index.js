@@ -82,7 +82,7 @@ function showCharacter(n) {
 
     let moviment = 97 * counter; // variável recebe o valor responsável por controlar o movimento do carrossel, que armazena a largura dos slides dos personagens multiplicado pelo valor do "counter"
 
-    if (innerWidth < 1200) {
+    if (innerWidth < 1200) { // se "innerWidth" (largura da viewport) for menor que 1200px "moviment" irá receber um valor referente ao tamanho dos slides dos personagens que serão redimensionados 
 
         moviment = 86 * counter;
     }
@@ -94,14 +94,14 @@ function showCharacter(n) {
 
     carrossel.style.transform = `translateY(${-moviment}px)`; // comando responsável por movimentar o carrossel verticalmente usando a propriedade "transform" do style. 
 
-    let tituloPersonagem = document.querySelector(".titulo-personagem")
-    let descricaoPersonagem = document.querySelector(".descricao-personagem");
-    let imagemPersonagem = document.querySelector(".imagem-personagem");
-    let idSelecionado = "";
-    let tituloSelecionado = "";
-    let descricaoSelecionada = "";
-    let slidesMobile = document.querySelectorAll(".personagens");
-    let listaPersonagens = document.getElementById("lista-personagens");
+    let tituloPersonagem = document.querySelector(".titulo-personagem") // variável que recebe o titulo do personagem
+    let descricaoPersonagem = document.querySelector(".descricao-personagem"); // variável que recebe a descrição do personagem
+    let imagemPersonagem = document.querySelector(".imagem-personagem"); // variável que recebe a imagem do personagem
+    let idSelecionado = ""; // variável que recebe o id do personagem selecionado
+    let tituloSelecionado = ""; // variável que recebe o titulo do personagem selecionado
+    let descricaoSelecionada = ""; // variável que recebe a descrição do personagem selecionado
+    let slidesMobile = document.querySelectorAll(".personagens"); // variável que recebe cada personagem
+    let listaPersonagens = document.getElementById("lista-personagens"); // variável que recebe um container que contem todos os personagens
 
     if (n < 1) {
 
@@ -184,12 +184,12 @@ function showCharacter(n) {
         let isScrolling = false;
         let startX;
 
-        listaPersonagens.addEventListener('touchstart', (event) => {
+        listaPersonagens.addEventListener('touchstart', (event) => { // evento responsável para mover os personagens do site usando o touch do smartphone
             isScrolling = true;
             startX = event.touches[0].clientX;
         });
 
-        listaPersonagens.addEventListener('touchmove', (event) => {
+        listaPersonagens.addEventListener('touchmove', (event) => { // evento responsável para mover os personagens do site usando o touch do smartphone
             if (!isScrolling) return;
             const currentX = event.touches[0].clientX;
             const diffX = currentX - startX;
@@ -197,7 +197,7 @@ function showCharacter(n) {
             startX = currentX;
         });
 
-        listaPersonagens.addEventListener('touchend', () => {
+        listaPersonagens.addEventListener('touchend', () => { // evento responsável para mover os personagens do site usando o touch do smartphone
             isScrolling = false;
         });
     }
@@ -278,12 +278,12 @@ function showGallery(n) {
 
 function passCharacter(n) {
 
-    showCharacter(counter += n);
+    showCharacter(counter += n); // chamando função showCharacter e atribuindo como argumento a variável counter + n e atribuindo essa a soma a counter
 }
 
 function passGallery(n) {
 
-    showGallery(counter2 += n);
+    showGallery(counter2 += n); // chamando função showGallery e atribuindo como argumento a variável counter2 + n e atribuindo essa a soma a counter2
 }
 
 function wallpaperGallery() {
@@ -308,7 +308,7 @@ imagesMobile.forEach((imagemobile) => {
         wallpaper.classList.add("ativado");
         body.classList.add("overflow");
 
-        buttonShare.addEventListener('click', async () => {
+        buttonShare.addEventListener('click', async () => { // evento de click para acionar a função de compartilhamento de imagens da galeria
             // Verifica se a API de compartilhamento está disponível no navegador
             if (navigator.share) {
                 try {
@@ -339,7 +339,7 @@ imagesMobile.forEach((imagemobile) => {
     })
 })
 
-window.addEventListener("resize", () => {
+window.addEventListener("resize", () => { // evento aplicado toda vez que a janela do navegador (viewport) for redimensionada
 
     if (window.innerWidth > 490) {
 
@@ -350,7 +350,7 @@ window.addEventListener("resize", () => {
 })
 
 
-buttonGrid.addEventListener("click", () => {
+buttonGrid.addEventListener("click", () => { // evento de click para remover o wallpaper da galeria e remover a rolagem do site
 
     wallpaper.classList.remove("ativado");
     body.classList.remove("overflow");
