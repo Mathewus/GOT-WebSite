@@ -80,7 +80,7 @@ function showCharacter(n) {
         carrossel.classList.add("movein1"); // adicionando a 1º classe de animação do movimento dos slides
     }
 
-    let moviment = 97 * counter;
+    let moviment = 97 * counter; // variável recebe o valor responsável por controlar o movimento do carrossel, que armazena a largura dos slides dos personagens multiplicado pelo valor do "counter"
 
     if (innerWidth < 1200) {
 
@@ -92,7 +92,7 @@ function showCharacter(n) {
         moviment = 65 * counter;
     }
 
-    carrossel.style.transform = `translateY(${-moviment}px)`;
+    carrossel.style.transform = `translateY(${-moviment}px)`; // comando responsável por movimentar o carrossel verticalmente usando a propriedade "transform" do style. 
 
     let tituloPersonagem = document.querySelector(".titulo-personagem")
     let descricaoPersonagem = document.querySelector(".descricao-personagem");
