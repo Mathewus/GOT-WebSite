@@ -311,9 +311,24 @@
     text-align: justify;
 }
 
+.descricao-episode {
+
+    overflow-y: hidden;
+    height: 110px;
+    /* transition: all ease-in .2s; */
+
+}
+
+.descricao-episode.extend {
+
+    height: auto;
+
+}
+
 .more-info {
 
     color: #289DC1;
+    cursor: pointer;
 }
 
 #menu-opcoes {
