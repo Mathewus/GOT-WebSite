@@ -369,8 +369,6 @@ moreInfos.forEach(info => {
         descricoesEpisodes.forEach(descricaoEpisode => {
 
             descricaoEpisode.classList.toggle("extend");
-            console.clear()
-            console.log("informação expandida")
         })
     })
 })
