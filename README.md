@@ -1,4 +1,4 @@
-# Projeto GOT-WebSite
+# Projeto GOT-Website
 
 Projeto inspirado na série Game Of Thrones, e utilizando a arte do Designer <a href="https://www.behance.net/gallery/77573125/Game-of-Thrones-Season-8-Web-Design" target="_blank">Errol Tiozon</a> como base para ser desenvolvido, tornando-a funcional e intuitiva ao usuário.
 
